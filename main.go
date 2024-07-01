@@ -25,7 +25,7 @@ func main() {
 	// Router handler motors
 	router.HandleFunc("/motors", motor.GetMotor).Methods("GET")
 	router.HandleFunc("/motors", auth.JWTAuth(motor.PostMotor)).Methods("POST")
-	router.HandleFunc("/motors", auth.JWTAuth(motor.PutMotor)).Methods("PUT")
+	router.HandleFunc("/motors", motor.PutMotor)).Methods("PUT")
 	router.HandleFunc("/motors/{id}", auth.JWTAuth(motor.DeleteMotor)).Methods("DELETE")
 
 	// Router handler bookeds
